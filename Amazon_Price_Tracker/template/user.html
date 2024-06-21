@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block activeH %}
+"nav-link"
+{% endblock %}
+
+{% block activeA %}
+"nav-link"
+{% endblock %}
+
+{% block activeD %}
+"nav-link active"
+{% endblock %}
+
+{% block content %}
+
+{% for message in get_flashed_messages() %}
+      <li><div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{message}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div></li>
+{% endfor %}
+
+
+
+<form action="./logout">
+<input type="hidden" name="sign-out" value="0">
+<div class="position-relative">
+<div class="position-absolute top-0 end-0">    
+<button type="submit" class="btn btn-outline-danger">Sign-Out</button>
+</div>
+</div>
+</form>
+
+<h2>Welcome {{user}}</h2>
+
+<h3 class="text-center p-4" >Add items for price-tracking</h3>
+<div class="mx-auto p-4" style="width: 500px;">
+<form action="/user" method="post">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Name of the Product</label>
+    <input type="text" class="form-control" id="name" name="product" aria-describedby="emailHelp" required>
+    <div id="emailHelp" class="form-text">You can write the custom name</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Amazon Url of Product</label>
+    <input type="url" class="form-control" id="exampleInputPassword1" name="link" required>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<div class="container p-5">
+    **To see your previous trackers <a href="./user/item">Click Here</a>
+  </div>
+</div>
+
+{% endblock %}

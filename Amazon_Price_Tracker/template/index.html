@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+
+{% block activeH %}
+"nav-link active"
+{% endblock %}
+
+{% block activeA %}
+"nav-link"
+{% endblock %}
+
+{% block activeD %}
+
+{{prop}}
+
+{% endblock %}
+
+{% block content %}
+ <div class="container">
+
+  {% for message in get_flashed_messages() %}
+      <li><div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{message}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div></li>
+{% endfor %}
+
+   <h1 class="p-5 text-center">Welcome To the Amazon Price Tracker</h1>
+   <p class="container">This projcet helps the user to track the prices of the products availaible at the amazon site.This project keeps track of the latest 7 dates tracked by the user and present it to the user in the table form.Down below are the procedures on how to use this site in an effective and proper way.
+    <h2 class="p-2">Instructions</h2>
+    <div class="row">
+      <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">1.Create Account</h5>
+            <p class="card-text">Click on the Accounts in the navbar of the site and scroll-down on the link to go to the sign-up page. Fill the form accordingly and your account is created</p>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">2.Add Products</h5>
+            <p class="card-text">After your account is created, sign-up and you will be directed to the page for tracking item. Fill the form with correct amazon page url of the product</p>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">3.See Product Activity</h5>
+            <p class="card-text">You would be directed to the product page. You will see the details of your previous trackers here.You can update the name of the product using Update button, delete product tracker completely with Delete button and see the tracker activity from Activity button  </p>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">4.See Tracker Activity</h5>
+            <p class="card-text">In tracker activity page,the user would see the table with date and prices columns and seven rows. For tracking the price of elements click on the track button on the top-right area.The User can track data for a product only once a day</p>
+            
+          </div>
+        </div>
+      </div>
+     <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">5.Add new Tracker</h5>
+            <p class="card-text">Below the table,you can see the track button, click on it to track the object activity,
+              User can track an object only once a day, if no data can be extracted from the url then please check the validity of the URL
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">6.Advanced Analysis</h5>
+            <p class="card-text">This feature gives graphical plot of the price activity as compared to their median and mean price.
+              This activity can be accessed after the user has tracked the object at least 3 times.
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </p>
+
+ </div>
+ 
+
+{% endblock %}

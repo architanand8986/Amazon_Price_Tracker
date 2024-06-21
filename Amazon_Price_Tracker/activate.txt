@@ -1,0 +1,5 @@
+write the following commands on the terminal for activating the virtual environment-->
+1->Set-ExecutionPolicy RemoteSigned -Scope Process
+2->.venv\Scripts\activate
+
+

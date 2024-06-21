@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block activeH %}
+"nav-link"
+{% endblock %}
+
+{% block activeA %}
+"nav-link"
+{% endblock %}
+
+{% block activeD %}
+"nav-link disabled" aria-disabled="true"
+{% endblock %}
+
+{% block content %}
+
+
+
+{% for message in get_flashed_messages() %}
+      <li><div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{message}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div></li>
+{% endfor %}
+  
+
+<h1 class="text-center p-5" > Sign Up Page:</h1>
+<div class="mx-auto p-2" style="width: 500px;">
+<form action="./create" method="post">
+    
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" required>
+      <div id="emailHelp" class="form-text">**Enter valid email here</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" name="password" required>
+    </div>
+    <button type="submit" class="btn btn-success">Sign Up</button>
+  </form>
+</div>
+
+
+
+
+{% endblock %}
+
+
